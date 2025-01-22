@@ -394,8 +394,9 @@ if __name__ == '__main__':
     kwargs = {}
     pipe = offload.extract_models("i23d_worker", i23d_worker)
     pipe.update(  offload.extract_models( "texgen_worker", texgen_worker))
-    if t2i_worker != None:
-        pipe.update(  offload.extract_models( "t2i_worker", t2i_worker))
+    if "t2i_worker" in locals() or "t2i_worker" in globals():
+        if t2i_worker != None:
+            pipe.update(  offload.extract_models( "t2i_worker", t2i_worker))
         
 
     if profile < 5:
