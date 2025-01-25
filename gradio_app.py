@@ -190,7 +190,7 @@ def shape_generation(
     octree_resolution=256,
     check_box_rembg=False,
 ):
-    mesh, save_folder = _gen_shape(
+    mesh, image, save_folder = _gen_shape(
         caption,
         image,
         steps=steps,
